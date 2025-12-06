@@ -1,5 +1,37 @@
+# App settings / secrets
 appsettings.json
+appsettings.*.json
+*.secret.json
+*.user
+
+# Build artifacts
 bin/
 obj/
-.idea/
+out/
+publish/
+dist/
+
+# IDE / editor
 .vs/
+.idea/
+.vscode/
+*.suo
+*.iml
+*.sln.docstates
+
+# Logs
+*.log
+
+# Auto-generated
+Generated/
+*.generated.cs
+
+# Temp
+*.tmp
+*.cache
+*.db
+*.DS_Store
+
+# Certificates
+*.pfx
+*.p12
