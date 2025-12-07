@@ -26,7 +26,8 @@ public class WeatherService : IWeatherService
 
         if (_cache.TryGetValue(cacheKey, out WeatherResponse cachedWeather))
         {
-            Console.WriteLine("Returning from cache");
+            Console.WriteLine("Cache hit");
+            cachedWeather.CacheStatus = "HIT";
             return cachedWeather;
         }
 
@@ -40,6 +41,7 @@ public class WeatherService : IWeatherService
 
         var weather = await response.Content.ReadFromJsonAsync<WeatherResponse>();
 
+        weather.CacheStatus = "MISS";
         _cache.Set(cacheKey, weather, TimeSpan.FromMinutes(10));
 
         return weather;

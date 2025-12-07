@@ -13,6 +13,7 @@
     public int? id { get; set; }
     public string? name { get; set; }
     public int? cod { get; set; }
+    public string CacheStatus { get; set; } = "MISS";
 }
 
 public class Coord
