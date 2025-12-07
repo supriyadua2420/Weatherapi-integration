@@ -34,7 +34,7 @@ public class WeatherService : IWeatherService
         string apiKey = _config["WeatherApi:ApiKey"];
         string baseUrl = _config["WeatherApi:BaseUrl"];
 
-        string url = $"{baseUrl}?lat={50.0219}&lon={-125.2428}&appid={apiKey}&units=metric";
+        string url = $"{baseUrl}?lat={lat}&lon={lon}&appid={apiKey}&units=metric";
 
         var response = await _httpClient.GetAsync(url);
         if (!response.IsSuccessStatusCode) return null;
